@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.dvc/cache/
+data/
+figures/
+results/
+*.egg-info/
+

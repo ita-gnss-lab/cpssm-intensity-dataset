@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+title: CPSSM Triple-Frequency Intensity Dataset
+message: If you use this dataset or its generation code, please cite this dataset and the original CU SENSE Lab simulator. The ITA fork is listed separately as implementation provenance.
+type: dataset
+authors:
+  - family-names: Florindo
+    given-names: Rodrigo de Lima
+    orcid: https://orcid.org/0000-0003-0412-5583
+version: 0.1.0
+date-released: 2026-11-19
+license: CC-BY-4.0
+references:
+  - type: software
+    title: GNSS Scintillation Simulator
+    authors:
+      - name: CU SENSE Lab
+    url: https://github.com/cu-sense-lab/gnss-scintillation-simulator
+  - type: article
+    title: "A theory of scintillation for two-component power law irregularity spectra: Overview and numerical results"
+    authors:
+      - family-names: Carrano
+        given-names: Charles S.
+      - family-names: Rino
+        given-names: Charles L.
+    journal: Radio Science
+    volume: 51
+    issue: 6
+    pages: 789-813
+    year: 2016
+    doi: 10.1002/2015RS005903
+  - type: software
+    title: GNSS Scintillation Simulator (refactored ITA GPS/GNSS Laboratory fork used for dataset generation)
+    authors:
+      - family-names: Pacelli
+        given-names: Rubem Vasconcelos
+      - family-names: Florindo
+        given-names: Rodrigo de Lima
+    url: https://github.com/ita-gnss-lab/gnss-scintillation-simulator
+

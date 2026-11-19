@@ -1,0 +1,22 @@
+stages:
+  generate:
+    cmd: uv run python main.py generate
+    deps:
+      - main.py
+      - params.yaml
+      - cpssm_dataset
+      - matlab/generate_intensity_dataset.m
+      - submodules/gnss-scintillation-simulator
+    outs:
+      - data/release
+
+  analyze:
+    cmd: uv run python main.py analyze
+    deps:
+      - main.py
+      - params.yaml
+      - cpssm_dataset
+      - data/release
+    outs:
+      - results/release
+

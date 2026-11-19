@@ -1,0 +1,45 @@
+dataset:
+  title: CPSSM Triple-Frequency Intensity Dataset
+  description: Synthetic GPS L1, L2, and L5 scintillation intensity realizations across propagation strength U.
+  output_directory: data/release
+  duration_seconds: 300.0
+  sampling_period_seconds: 0.01
+  u_values: [0.05, 0.1, 0.2, 0.4, 0.7, 1.0, 1.5, 2.0, 3.0, 5.0, 7.5, 10.0]
+  seed_start: 2000
+  realization_count: 100
+  bands: [L1, L2, L5]
+  frequencies_hz: [1575420000.0, 1227600000.0, 1176450000.0]
+  spectral_parameters:
+    mu0: 0.55
+    p1: 2.45
+    p2: 3.7
+  rhof_veff_ratio_seconds: 1.0
+  parquet_compression: zstd
+  keep_intermediate_csv: false
+  simulator_directory: submodules/gnss-scintillation-simulator
+  simulator_commit: 175b2ec9e30b802f5ac0ed1d158cd673ae14092b
+
+# Small profile used for documentation, tests, and pipeline checks.
+example:
+  output_directory: data/example
+  duration_seconds: 5.0
+  u_values: [0.05, 1.0, 10.0]
+  seeds: [0, 1]
+
+analysis:
+  selected_u_values: [0.05, 0.4, 1.0, 3.0]
+  histogram_bin_count: 120
+  amplitude_range: [0.0, 2.5]
+  probability_density_range: [1.0e-3, 10.0]
+  output_directory: results/release
+  example_output_directory: results/example
+
+publication:
+  # Set this before publishing, for example: kaggle_owner: rodrigodlf
+  kaggle_owner: rodrigodlf
+  dataset_slug: cpssm-multifrequency-intensity
+  upload_directory: data/kaggle_upload
+  mode: create
+  version_message: Initial dataset release
+  public: true
+
